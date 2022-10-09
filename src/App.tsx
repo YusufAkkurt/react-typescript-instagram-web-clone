@@ -18,13 +18,9 @@ function App() {
             current = 1;
 
         const startSlider = () => {
-            if (current > 0) images[current - 1].classList.add('opacity-0');
-            else images[total - 1].classList.add('opacity-0');
-
+            images[(current > 0 ? current : total) -1].classList.add('opacity-0');
             images[current].classList.remove('opacity-0');
-            current += 1;
-
-            if (current === total) current = 0;
+            current = current === total - 1 ? 0 : current + 1;
         };
 
         const interval = setInterval(startSlider, 3000);

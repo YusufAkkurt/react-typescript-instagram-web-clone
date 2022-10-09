@@ -15,7 +15,7 @@ function App() {
 
         let images = phoneInnerDivRef.current.querySelectorAll('img'),
             total = images.length,
-            current = 0;
+            current = 1;
 
         const startSlider = () => {
             if (current > 0) images[current - 1].classList.add('opacity-0');
@@ -27,7 +27,6 @@ function App() {
             if (current === total) current = 0;
         };
 
-        startSlider();
         const interval = setInterval(startSlider, 3000);
 
         return () => clearInterval(interval);
@@ -37,7 +36,7 @@ function App() {
         <div className="h-full flex flex-wrap overflow-auto items-center justify-center gap-x-8">
             <div className="hidden md:block relative h-[581px] w-[380px] bg-phone-pattern bg-[length:468.32px_634.15px] bg-[top_left_-46px]">
                 <div ref={phoneInnerDivRef} className="absolute w-[250px] h-[539px] top-[27px] right-[18px]">
-                    <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot1.png/fdfe239b7c9f.png" alt="" className="w-full h-full absolute inset-0 opacity-0 transition-opacity duration-1000 ease-linear" />
+                    <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot1.png/fdfe239b7c9f.png" alt="" className="w-full h-full absolute inset-0 transition-opacity duration-1000 ease-linear" />
                     <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot2.png/4d62acb667fb.png" alt="" className="w-full h-full absolute inset-0 opacity-0 transition-opacity duration-1000 ease-linear" />
                     <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot3.png/94edb770accf.png" alt="" className="w-full h-full absolute inset-0 opacity-0 transition-opacity duration-1000 ease-linear" />
                     <img src="https://www.instagram.com/static/images/homepage/screenshots/screenshot4.png/a4fd825e3d49.png" alt="" className="w-full h-full absolute inset-0 opacity-0 transition-opacity duration-1000 ease-linear" />
